@@ -1,5 +1,7 @@
 import React from 'react';
 
+import useModal from 'hooks/Modal';
+
 import usePriceCalculator, {
     PriceContext,
     rentTypes,
@@ -8,6 +10,8 @@ import usePriceCalculator, {
 
 import Gallery from '../Gallery';
 import Option from '../ProductOption';
+
+import ProductModal from '../ProductModal';
 
 import Button from 'ui/Button';
 import Radio from 'ui/Radio';
@@ -23,6 +27,8 @@ const cx = classNames.bind(style);
  */
 const ProductCard = ({ product }) => {
     const [state, dispatch] = usePriceCalculator(product);
+
+    const modal = useModal();
 
     const handleOptionsChange = ({ target }) => {
         const { optionId: id } = target.dataset;
@@ -106,9 +112,13 @@ const ProductCard = ({ product }) => {
                 <Button
                     layout="ui-solid"
                     content={'Оставить заявку'}
+                    {...modal.control}
                 />
             </div>
 
+            <PriceContext.Provider value={{ product, state, dispatch }}>
+                <ProductModal {...modal.bind} />
+            </PriceContext.Provider>
         </div>
     );
 };

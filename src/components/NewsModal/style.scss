@@ -1,0 +1,59 @@
+@import 'styles/mixins';
+
+.base {
+    @include positionCenter;
+
+    width: 320px;
+    height: 520px;
+
+    background: var(--clr-palette-white);
+}
+
+.close-button {
+    @include positionTopRight;
+    z-index: 1;
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    & > * {
+        padding-inline: 12px;
+    }
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.category {
+    font: 500 14px/16px var(--ff-work-sans);
+    color: var(--clr-palette-primary)
+}
+
+.title {
+    font: 600 24px/28px var(--ff-work-sans);
+    color: var(--clr-text-primary);
+}
+
+.content {
+    height: 108px;
+    overflow: auto;
+
+    font: 16px/21px var(--ff-work-sans);
+    color: var(--clr-text-primary);
+
+    @include scrollbar;
+
+    & a {
+        color: var(--clr-palette-primary);
+    }
+}
+
+.text {
+    padding-block-end: 12px;
+}

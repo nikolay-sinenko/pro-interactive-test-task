@@ -1,0 +1,73 @@
+.base {
+    position: relative;
+    margin-block: 20px;
+    background: var(--clr-palette-grey-light);
+}
+
+.cover {
+
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    &-image {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+
+        bottom: -10px;
+        left: 8px;
+
+        width: 40px;
+        height: 40px;
+
+        background: 
+            url(assets/img/news-cover-arrow.svg)
+            center/ contain
+            no-repeat
+        ;
+    }
+}
+
+.content {
+    padding: 20px 8px;
+    font: 500 12px/14px var(--ff-work-sans);
+}
+
+.category {
+    color: var(--clr-palette-primary)
+}
+
+.title {
+    margin-top: 4px;
+    font: 600 20px/23px var(--ff-work-sans);
+    color: var(--clr-text-primary);
+    
+    cursor: pointer;
+}
+
+.annotation {
+    margin-top: 8px;
+    color: var(--clr-text-primary);
+}
+
+.publication-date {
+    margin-top: 20px;
+    display: block;
+}
+
+
+.trigger {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: none;
+    // pointer-events: none;
+}

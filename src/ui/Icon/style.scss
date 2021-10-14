@@ -1,0 +1,16 @@
+.base {
+
+    --icon: none;
+    --size: 32px;
+
+    width: var(--size);
+    height: var(--size);
+
+    display: inline-block;
+
+    background: 
+        var(--icon) 
+        center / contain 
+        no-repeat
+    ;
+}

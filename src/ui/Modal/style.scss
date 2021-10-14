@@ -1,0 +1,28 @@
+@import 'styles/mixins';
+
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    max-width: 375px;
+    margin: auto;
+
+    overflow-y: auto;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    z-index: 9999;
+
+    &--closed {
+        display: none;
+    }
+}
+
+.backdrop {
+    position: absolute;
+    inset: 0;
+    background: var(--clr-bg-backdrop);
+    z-index: -1;
+}

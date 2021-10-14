@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from 'modules/Header';
+import Intro from 'modules/Intro';
 import Faq from 'modules/Faq';
 import Contacts from 'modules/Contacts';
 import Section from 'components/Section';
@@ -19,6 +20,9 @@ const App = () => (
         </header>
 
         <main>
+            <Section>
+                <Intro />
+            </Section>
             <Section title="FAQ" preambula="Почему выбирают нас?">
                 <Faq />
             </Section>

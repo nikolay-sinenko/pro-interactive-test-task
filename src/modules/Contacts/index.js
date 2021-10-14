@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+
+import { LazyImage } from 'components/Image';
 import Icon from 'ui/Icon';
+
+import mapImage from 'assets/img/contacts-map.webp';
 
 import style from './style.scss';
 import classNames from 'classnames/bind';
@@ -42,6 +46,15 @@ const Contacts = () => (
                 </div>
             </div>
         ))}
+
+        <LazyImage
+            tabIndex={0}
+            className={cx('map')}
+            src={mapImage}
+            alt="Карта"
+            height={375}
+            width={375}
+        />
     </>
 );
 

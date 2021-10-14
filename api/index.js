@@ -21,6 +21,11 @@ app.get('/', (_, res) => {
     res.redirect('/index.html');
 });
 
+//  Apply routes
+app.use('/news', require('./routes/news'));
+app.use('/products', require('./routes/products'));
+app.use('/orders', require('./routes/orders'));
+
 //  Start API-server
 app.listen(PORT, () => {
     console.log(`Server started at ${PORT}`);

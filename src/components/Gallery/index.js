@@ -3,6 +3,7 @@ import React from 'react';
 import { Image } from '../Image';
 import Button from 'ui/Button';
 import ChevronIcon from 'ui/Icon/Chevron';
+import Progress from 'ui/Progress';
 
 import style from './style.scss';
 import classNames from 'classnames/bind';
@@ -72,6 +73,8 @@ const Gallery = ({ name, images = [], width = 320, height = 320 }) => {
                     aria-label="Next image"
                 />
             </div>
+
+            <Progress value={currentIndex + 1} max={images.length} />
         </>
     );
 };

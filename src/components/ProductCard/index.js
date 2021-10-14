@@ -7,6 +7,7 @@ import usePriceCalculator, {
 } from 'hooks/PriceCalculator';
 
 import Gallery from '../Gallery';
+import Option from '../ProductOption';
 
 import Button from 'ui/Button';
 import Radio from 'ui/Radio';
@@ -22,6 +23,12 @@ const cx = classNames.bind(style);
  */
 const ProductCard = ({ product }) => {
     const [state, dispatch] = usePriceCalculator(product);
+
+    const handleOptionsChange = ({ target }) => {
+        const { optionId: id } = target.dataset;
+        dispatch(actions.TOGGLE_OPTION(Number(id)));
+    };
+
     const handleRentDurationChange = ({ target }) => {
         dispatch(actions.SET_RENT(Number(target.value)));
     };
@@ -43,6 +50,39 @@ const ProductCard = ({ product }) => {
 
             <h3 className={cx('title')}>{product.title}</h3>
             <p className={cx('sizes')}>Размер: {productSizes}</p>
+
+            <div className={cx('options-heading')}>
+                <span className={cx('tab')}>Доп. опции</span>
+
+                {state.selected.size === product.options.length && (
+                    <Button
+                        onClick={dispatch.bind(null, actions.SELECT_NONE)}
+                        content={'Снять всё'}
+                        layout="plain"
+                    />
+                )}
+
+                {state.selected.size !== product.options.length &&
+                    state.selected.size > 0 && (
+                        <Button
+                            onClick={dispatch.bind(null, actions.SELECT_ALL)}
+                            content={'Выбрать всё'}
+                            layout="plain"
+                        />
+                    )}
+            </div>
+
+            <div tabIndex={-1} className={cx('options')}>
+                {product.options.map(option => (
+                    <Option
+                        option={option}
+                        key={`option-${product.id}-${option.id}`}
+                        checked={state.selected.has(option.id)}
+                        onChange={handleOptionsChange}
+                        data-option-id={option.id}
+                    />
+                ))}
+            </div>
 
             <span className={cx('rent-heading')}>Укажите время аренды</span>
             <div className={cx('rent')}>

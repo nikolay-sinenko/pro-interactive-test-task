@@ -23,6 +23,37 @@
         color: var(--clr-text-secondary);
     }
 }
+
+.options {
+
+    &-heading {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    height: 152px;
+
+    @include scrollbar;
+    overflow-y: auto;
+
+    background: var(--clr-palette-grey-light);
+}
+
+.tab {
+
+    padding: 4px;
+    display: inline-block;
+
+    font: 600 12px/14px var(--ff-work-sans);
+    color: var(--clr-palette-primary);
+
+    background: var(--clr-palette-grey-light);
+
+    border-bottom: 1px solid;
+}
+
+
 .rent {
 
     &-heading {

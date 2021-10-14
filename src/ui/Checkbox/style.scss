@@ -1,0 +1,25 @@
+.input {
+    
+    --size: 15px;
+
+    align-self: center;
+    
+    width: var(--size);
+    height: var(--size);
+
+    border: 1px solid var(--clr-palette-primary);
+    border-radius: 2px;
+
+    background: var(--clr-palette-white);
+
+    appearance: none;
+    cursor: pointer;
+
+    &:checked {
+        border: none;
+        background: 
+            var(--clr-palette-primary) 
+            url(assets/icons/tick.svg)
+        ;
+    }
+}

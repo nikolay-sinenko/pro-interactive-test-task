@@ -2,6 +2,7 @@ import React from 'react';
 
 import Header from 'modules/Header';
 import Intro from 'modules/Intro';
+import Products from 'modules/Products';
 import Faq from 'modules/Faq';
 import News from 'modules/News';
 import Contacts from 'modules/Contacts';
@@ -23,6 +24,9 @@ const App = () => (
         <main>
             <Section>
                 <Intro />
+            </Section>
+            <Section title="Фотобудки">
+                <Products />
             </Section>
             <Section title="FAQ" preambula="Почему выбирают нас?">
                 <Faq />

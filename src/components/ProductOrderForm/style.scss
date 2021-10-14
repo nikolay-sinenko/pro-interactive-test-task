@@ -1,0 +1,30 @@
+.base {
+    padding: 4px;
+    padding-left: 10px;
+
+    display: grid;
+    grid-template-columns: 150px auto;
+    column-gap: 6px;
+        
+    border: 1px solid var(--clr-palette-primary);
+    border-radius: 6px;
+}
+
+.phone {
+    padding: 2px;
+    width: 152px;
+
+    border: none;
+    border-radius: 6px;
+
+    font: 16px/24px var(--ff-work-sans);
+    color: var(--clr-text-primary);
+
+    &:focus-visible {
+        outline: none;
+    }
+}
+
+.submit {
+    margin-top: 12px;
+}

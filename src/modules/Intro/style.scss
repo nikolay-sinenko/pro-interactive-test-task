@@ -1,6 +1,58 @@
 .base {
     padding-inline: 16px;
 }
+
+.video {
+    position: relative;
+    
+    padding: 3px;
+
+    height: 200px;
+
+    border: 3px solid var(--clr-palette-primary);
+    border-radius: 8px;
+
+    z-index: 1;
+
+    &::before,
+    &::after {
+        position: absolute;
+        content: '';
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    // Dots
+    &::before {
+        top: -14px;
+        right: -14px;
+
+        width: 83px;
+        height: 44px;
+
+        background: 
+            url(assets/img/promo-video-dots.png) 
+            center / cover 
+            no-repeat
+        ;
+    }
+
+    // Circle
+    &::after {
+        left: -40px;
+        bottom: -75px;
+
+        width: 185px;
+        height: 185px;
+
+        background: 
+            url(assets/img/promo-video-circle.svg) 
+            center / cover 
+            no-repeat
+        ;
+    }
+}
+
 .title {
 
     margin-top: 60px;

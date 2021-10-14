@@ -1,4 +1,6 @@
 import React from 'react';
+
+import Video from 'components/Video';
 import Icon from 'ui/Icon';
 
 import style from './style.scss';
@@ -20,6 +22,16 @@ const benefits = [
  */
 const Intro = () => (
     <div className={cx('base')}>
+        <Video
+            className={cx('video')}
+            id="9D51YuV_Wes"
+            coverImage={{
+                src: '/assets/uploads/promo-video-cover.webp',
+                width: '320px',
+                height: '188px',
+                alt: 'Promo video cover'
+            }}
+        />
 
         <h1 className={cx('title')}>
             <span>Фото на </span>праздник

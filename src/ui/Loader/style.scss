@@ -1,0 +1,20 @@
+.base {
+    margin: auto;
+
+    width: 150px;
+    height: 150px;
+
+    border: 10px solid var(--clr-palette-white);
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font: 600 18px/21px var(--ff-work-sans);
+    color: var(--clr-palette-white);
+
+    background: var(--clr-palette-primary);
+
+    user-select: none;
+}

@@ -1,0 +1,46 @@
+@import 'styles/mixins';
+
+.cover {
+    position: relative;
+    cursor: pointer;
+
+    &-image {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 8px;
+    }
+}
+
+.play-button {
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--clr-palette-white);
+    box-shadow: var(--shadow-primary);
+
+    cursor: pointer;
+}
+
+.modal {
+    width: 320px;
+    height: 240px;
+
+    &-close {
+        @include positionTopRight;
+    }
+}
+
+.play-button,
+.modal,
+.loader {
+    @include positionCenter;
+}

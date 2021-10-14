@@ -1,0 +1,18 @@
+.base {
+    position: fixed;
+    top: 0;
+    width: 375px;
+    padding: 12px;
+    background: var(--clr-palette-white);
+    z-index: 2;
+}
+
+.logo {
+    width: 63px;
+    height: 60px;
+    background: 
+        url(assets/img/logo.svg) 
+        center / cover 
+        no-repeat
+    ;
+}

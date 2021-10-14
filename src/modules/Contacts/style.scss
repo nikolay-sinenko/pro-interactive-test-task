@@ -1,0 +1,36 @@
+.item {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    gap: 4px 16px;
+
+    margin-block: 20px;
+    padding-inline: 16px;
+}
+
+.heading {
+    font: 20px/32px var(--ff-roboto-slab);
+    color: var(--clr-text-primary);
+}
+
+.caption {
+    grid-column: 2 / 3;
+
+    font: 18px/21px var(--ff-work-sans);
+    color: var(--clr-text-secondary);
+
+    & a {
+        color: currentColor;
+    }
+}
+
+.separator {
+    margin: 0 16px 0 64px;
+    height: 1px;
+    border: none;
+    color: var(--clr-palette-grey-medium);
+    background: currentColor;
+}
+
+.map {
+    margin-top: 20px;
+}

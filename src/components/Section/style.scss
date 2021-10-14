@@ -1,0 +1,19 @@
+.base {
+    margin-top: 60px;
+
+    &:first-of-type {
+        margin-top: 40px;
+    }
+}
+
+.preambula {
+    padding-inline: 16px;
+    font: 16px/19px var(--ff-work-sans);
+    color: var(--clr-palette-primary);
+}
+
+.title {
+    padding-inline: 16px;
+    font: 700 32px/36px var(--ff-roboto-slab);
+    color: var(--clr-text-primary);
+}

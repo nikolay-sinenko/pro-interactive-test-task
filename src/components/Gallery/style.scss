@@ -1,0 +1,37 @@
+.base {
+    position: relative;
+    margin-inline: auto;
+    width: 320px;
+}
+
+.control {
+    position: absolute;
+    top: 50%;
+    
+    &--prev {
+        left: 0;
+        transform: 
+            translate(-50%, -50%) 
+            rotate(90deg)
+        ;
+    }
+
+    &--next {
+        right: 0;
+        transform: 
+            translate(50%, -50%)
+            rotate(-90deg)
+        ;
+    }
+}
+
+.slider {
+    max-width: 320px;
+    max-height: 320px;
+    
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}

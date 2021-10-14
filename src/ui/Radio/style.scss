@@ -1,0 +1,30 @@
+.label {
+    position: relative;
+
+    margin-block: 4px;
+    padding: 4px 12px;
+    
+    border-radius: 6px;
+    display: inline-block;
+
+    font: 13px/18px var(--ff-work-sans);
+    color: var(--clr-text-primary);
+    
+    background: var(--clr-palette-grey-light);
+    transition: box-shadow 0.35s ease-in;
+    
+    user-select: none;
+
+    &--checked {
+        color: var(--clr-palette-white);
+        background: var(--clr-palette-primary);
+    }
+}
+
+.input {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    appearance: none;
+    cursor: pointer;
+}

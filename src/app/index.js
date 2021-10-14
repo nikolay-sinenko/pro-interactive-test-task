@@ -3,6 +3,7 @@ import React from 'react';
 import Header from 'modules/Header';
 import Intro from 'modules/Intro';
 import Faq from 'modules/Faq';
+import News from 'modules/News';
 import Contacts from 'modules/Contacts';
 import Section from 'components/Section';
 
@@ -25,6 +26,9 @@ const App = () => (
             </Section>
             <Section title="FAQ" preambula="Почему выбирают нас?">
                 <Faq />
+            </Section>
+            <Section title="Новости" preambula="Почему выбирают нас?">
+                <News />
             </Section>
         </main>
 

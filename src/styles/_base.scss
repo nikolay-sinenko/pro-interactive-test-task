@@ -1,0 +1,19 @@
+// For demo only
+body {
+    display: flex;
+    justify-content: center;
+    background: #eee;
+    overflow: hidden auto;
+}
+
+// For demo only
+#app-container {
+    width: 100%;
+    max-width: 375px;
+    overflow-x: hidden;
+    background: #fff;
+}
+
+.scroll-lock {
+    overflow: hidden;
+}

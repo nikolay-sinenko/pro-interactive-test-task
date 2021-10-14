@@ -1,0 +1,29 @@
+@mixin positionTopRight {
+    position: absolute;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+@mixin positionCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--clr-palette-primary) var(--clr-palette-grey-medium);
+
+    &::-webkit-scrollbar {
+        width: 3px;
+
+        &-thumb {
+            background: var(--clr-palette-primary);
+        }
+
+        &-track {
+            background: var(--clr-palette-grey-medium);
+        }
+    }
+}

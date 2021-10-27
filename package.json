@@ -7,7 +7,8 @@
     "api": "cd ./api && npm start",
     "build": "webpack --mode production",
     "dev": "webpack serve --mode development",
-    "start": "npm run build && npm run api"
+    "start:build": "npm run build && npm run api",
+    "start": "npm run api"
   },
   "keywords": [],
   "author": "Nikolay Sinenko",

@@ -107,6 +107,11 @@ module.exports = (_, argv) => {
                 template: join(SOURCE, 'index.html'),
             }),
             new MiniCssExtractPlugin(),
+            new webpack.DefinePlugin({
+                'process.env.API_URL': JSON.stringify(
+                    !prod ? `http://localhost:3000/api` : '/api'
+                ),
+            }),
             prod &&
                 new CopyPlugin({
                     patterns: [

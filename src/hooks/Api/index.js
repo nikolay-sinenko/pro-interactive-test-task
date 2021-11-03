@@ -1,10 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 
-const { port, origin } = document.location;
-
-const API_LOCATION = Number(port) === 3000 ? 'http://localhost:5000' : origin;
-
 /**
  * Hook to communicate with API (wrap over Axios)
  *
@@ -15,7 +11,7 @@ const API_LOCATION = Number(port) === 3000 ? 'http://localhost:5000' : origin;
  * const { get: getArticle, status } = useApi(`/news/${id}`)
  */
 const useApi = route => {
-    const endPoint = API_LOCATION + route;
+    const endPoint = process.env.API_URL + route;
 
     const [status, setStatus] = React.useState({
         loading: false,
@@ -23,10 +19,10 @@ const useApi = route => {
         error: null,
     });
 
-    const completeStatus = (error = null) => ({ 
-        error, 
-        loading: false, 
-        finished: true 
+    const completeStatus = (error = null) => ({
+        error,
+        loading: false,
+        finished: true,
     });
 
     /**

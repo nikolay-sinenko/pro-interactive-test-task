@@ -4,11 +4,10 @@
   "description": "PRO-Interactive Test Task",
   "main": "index.js",
   "scripts": {
-    "api": "cd ./api && npm start",
     "build": "webpack --mode production",
-    "dev": "webpack serve --mode development",
-    "start:build": "npm run build && npm run api",
-    "start": "npm run api"
+    "serve": "webpack serve --mode development",
+    "start:dev": "concurrently \"npm run serve\" \"vercel dev\"",
+    "start": "npm run build"
   },
   "keywords": [],
   "author": "Nikolay Sinenko",

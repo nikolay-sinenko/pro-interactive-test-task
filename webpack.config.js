@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const { join, resolve } = require('path');
 
 const TerserPlugin = require('terser-webpack-plugin');
@@ -10,7 +11,7 @@ const SOURCE = resolve(__dirname, './src');
 const OUTPUT = resolve(__dirname, './dist');
 const UPLOADS = join(SOURCE, 'assets', 'uploads');
 
-const PORT = 3000;
+const PORT = process.env.PORT || 5000;
 
 module.exports = (_, argv) => {
     const prod = argv.mode === 'production';
@@ -110,9 +111,9 @@ module.exports = (_, argv) => {
             }),
             new MiniCssExtractPlugin(),
             prod && new CopyPlugin({
-                patterns: [
-                    { 
-                        from: UPLOADS, 
+                    patterns: [
+                        {
+                            from: UPLOADS,
                         to: join(OUTPUT, 'assets', 'uploads') 
                     }
                 ]

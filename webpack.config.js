@@ -33,7 +33,7 @@ module.exports = (_, argv) => {
             port: PORT,
             static: {
                 directory: UPLOADS,
-                publicPath: '/assets/uploads'
+                publicPath: '/assets/uploads',
             },
         },
 
@@ -99,10 +99,7 @@ module.exports = (_, argv) => {
         },
 
         resolve: {
-            modules: [
-                'node_modules',
-                'src',
-            ],
+            modules: ['node_modules', 'src'],
         },
 
         plugins: [
@@ -110,14 +107,15 @@ module.exports = (_, argv) => {
                 template: join(SOURCE, 'index.html'),
             }),
             new MiniCssExtractPlugin(),
-            prod && new CopyPlugin({
+            prod &&
+                new CopyPlugin({
                     patterns: [
                         {
                             from: UPLOADS,
-                        to: join(OUTPUT, 'assets', 'uploads') 
-                    }
-                ]
-            })
+                            to: join(OUTPUT, 'assets', 'uploads'),
+                        },
+                    ],
+                }),
         ].filter(Boolean),
     };
 };

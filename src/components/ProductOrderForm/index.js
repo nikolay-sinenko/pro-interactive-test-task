@@ -41,8 +41,18 @@ const OrderForm = React.forwardRef(({ onSubmit }, forwardedRef) => {
             contactBy: contactByInput.value,
         };
 
-        const response = await sendOrder(payload);
-        alert('Success!\n' + JSON.stringify(response));
+        const { orderID, phone, contactBy, productID, selectedOptions, rentType } =
+            await sendOrder(payload);
+
+        alert(
+            'Success!\n\n' +
+                `Order ID:   ${orderID}\n` +
+                `Contact:   ${phone} (${contactBy})\n` +
+                `Product ID:   ${productID}\n` +
+                `Selected Options:   ${selectedOptions.join(', ')}\n` +
+                `Rent Duration:   ${rentTypes.get(rentType).label}`
+        );
+
         onSubmit();
     };
 

@@ -25,10 +25,9 @@ class NewsEntryExtended extends NewsEntry {
     }
 }
 
-const news = Array.from({ length: 20 }, (_, index) => new NewsEntry(index + 1));
+const news = Array.from({ length: 8 }, (_, index) => new NewsEntry(index + 1));
 
 router.get('/', (req, res) => {
-
     const start = Number(req.query.start) - 1 || 0;
     const offset = Number(req.query.offset) || 3;
     const next = start + offset + 1;

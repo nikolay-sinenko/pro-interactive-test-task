@@ -1,7 +1,7 @@
 import React from 'react';
 import InputMask from 'react-input-mask';
 
-import { PriceContext } from 'hooks/PriceCalculator';
+import { PriceContext, rentTypes } from 'hooks/PriceCalculator';
 import useApi from 'hooks/Api';
 import useInput from 'hooks/Input';
 
@@ -23,22 +23,22 @@ const OrderForm = React.forwardRef(({ onSubmit }, forwardedRef) => {
     const { product, state } = React.useContext(PriceContext);
     const { post: sendOrder } = useApi('/orders');
 
-    const phone = useInput();
-    const contactBy = useInput(contacts.PHONE);
+    const phoneInput = useInput();
+    const contactByInput = useInput(contacts.PHONE);
 
-    const handleOrderSubmit = async (event) => {
+    const handleOrderSubmit = async event => {
         event.preventDefault();
 
         const phoneRegex = /^\+7\s\([0-9]{3}\)\s[0-9]{3}(\s[0-9]{2}){2}$/;
 
-        if (!phoneRegex.test(phone.value)) return;
+        if (!phoneRegex.test(phoneInput.value)) return;
 
         const payload = {
             productID: product.id,
             selectedOptions: Array.from(state.selected.keys()),
             rentType: state.rentType,
-            phone: phone.value,
-            contactBy: contactBy.value,
+            phone: phoneInput.value,
+            contactBy: contactByInput.value,
         };
 
         const response = await sendOrder(payload);
@@ -54,8 +54,8 @@ const OrderForm = React.forwardRef(({ onSubmit }, forwardedRef) => {
                     className={cx('phone')}
                     mask={'+7 (999) 999 99 99'}
                     placeholder={'+7 (000) 000 00 00'}
-                    defaultValue={phone.value}
-                    onChange={phone.onChange}
+                    defaultValue={phoneInput.value}
+                    onChange={phoneInput.onChange}
                     maskChar={'_'}
                 />
 
@@ -63,7 +63,7 @@ const OrderForm = React.forwardRef(({ onSubmit }, forwardedRef) => {
                     name={'contact-by'}
                     entries={contactTypes}
                     layout="solid"
-                    {...contactBy}
+                    {...contactByInput}
                 />
             </div>
 

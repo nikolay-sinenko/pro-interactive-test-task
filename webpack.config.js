@@ -5,7 +5,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const nameByBEM = require('./webpack.bem');
+const { minifiedClassnames, fullBEMClassnames } = require('./webpack.classNames');
 
 const SOURCE = resolve(__dirname, './src');
 const OUTPUT = resolve(__dirname, './dist');
@@ -53,7 +53,7 @@ module.exports = (_, argv) => {
                             loader: 'css-loader',
                             options: {
                                 modules: {
-                                    getLocalIdent: nameByBEM,
+                                    getLocalIdent: prod ? minifiedClassnames : fullBEMClassnames,
                                 },
                                 sourceMap: false,
                             },
